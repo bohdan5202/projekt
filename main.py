@@ -30,8 +30,13 @@ import matplotlib.pyplot as plt
 # df.to_csv('cleaned_data.csv', index=False)
 # print(df.info())
 df = pd.read_csv('clear.csv')
-df["Releaseyear"] = pd.to_numeric(df["Releaseyear"], errors="coerce")
-size_year = df.groupby(by="Releaseyear").size().sort_index()
+df["Publisher(s)"].value_counts().head(10).plot(kind="pie", legend=False, autopct=lambda p: f'{int(p*sum(df["Publisher(s)"].value_counts())/100)}')
+plt.title("Top 10 Publishers by Number of Games")
+plt.tight_layout()
+plt.savefig("top_10_publishers_pie.png")
+
+# by year
+# size_year = df.groupby(by="Releaseyear").size().sort_index()
 
 # size_year.plot(kind="bar", legend=False)
 # plt.title("Number of Games Released Each Year (Bar)")
@@ -40,14 +45,14 @@ size_year = df.groupby(by="Releaseyear").size().sort_index()
 # plt.tight_layout()
 # plt.savefig("games_by_year_bar.png")
 
-size_year.plot(kind="line", marker="o", legend=False)
-plt.title("Number of Games Released Each Year (Line)")
-plt.xlabel("Release Year")
-plt.ylabel("Number of Games")
-plt.grid(True, alpha=0.3)
-plt.tight_layout()
+# size_year.plot(kind="line", marker="o", legend=False)
+# plt.title("Number of Games Released Each Year (Line)")
+# plt.xlabel("Release Year")
+# plt.ylabel("Number of Games")
+# plt.grid(True, alpha=0.3)
+# plt.tight_layout()
 # plt.show()
-plt.savefig("games_by_year_line.png")
+# plt.savefig("games_by_year_line.png")
 
 
 # top10
