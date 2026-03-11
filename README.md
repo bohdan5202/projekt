@@ -51,6 +51,19 @@ The dataset contains information such as:
 * matplotlib
 * kagglehub
 
+## Visualizations
+
+### Top 10 Selling Video Games
+![Platform Sales](top_10_pandas.png)
+
+### Release Year Distribution
+![Release Year Bar](games_by_year_bar.png) ![Release Year Line](games_by_year_line.png) 
+
+### Top Publishers
+![Top Publishers Pie](top_10_publishers_pie.png)
+
+
+
 ## Author
 
 Bohdan)
